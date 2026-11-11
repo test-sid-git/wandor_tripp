@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apple — Pro Showcase (UI Practice)</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Global Frosted Navbar -->
+  <header class="global-nav">
+    <nav class="nav-inner" aria-label="Global">
+      <a href="#top" class="nav-logo" aria-label="Apple">
+        <svg viewBox="0 0 14 17" width="14" height="17" fill="currentColor" aria-hidden="true">
+          <path d="M11.6 9.1c0-1.9 1.6-2.9 1.7-3-1-1.4-2.4-1.6-2.9-1.6-1.2-.1-2.4.7-3 .7-.6 0-1.6-.7-2.6-.7-1.3 0-2.6.8-3.3 2-1.4 2.4-.4 6 1 8 .7 1 1.5 2.1 2.5 2 1 0 1.4-.7 2.6-.7 1.2 0 1.5.7 2.6.7 1.1 0 1.8-1 2.5-2 .8-1.1 1.1-2.2 1.1-2.3-.1 0-2.2-.8-2.2-3.1zM9.6 3.1c.6-.7 1-1.7.8-2.7-.8 0-1.8.6-2.4 1.3-.5.6-1 1.6-.8 2.5.9.1 1.8-.4 2.4-1.1z"/>
+        </svg>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#iphone">iPhone</a></li>
+        <li><a href="#mac">Mac</a></li>
+        <li><a href="#ipad">iPad</a></li>
+        <li><a href="#watch">Watch</a></li>
+        <li><a href="#audio">AirPods</a></li>
+        <li><a href="#highlights">Specs</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="icon-btn" id="bagToggle" type="button" aria-label="Shopping Bag">
+          <svg viewBox="0 0 16 18" width="15" height="17" fill="none" stroke="currentColor" stroke-width="1.4">
+            <path d="M4.5 6V4.5a3.5 3.5 0 0 1 7 0V6"/>
+            <rect x="2" y="6" width="12" height="10" rx="2"/>
+          </svg>
+          <span class="bag-badge" id="bagCount" hidden>0</span>
+        </button>
+        <button class="icon-btn mobile-menu-btn" id="menuToggle" type="button" aria-label="Menu">☰</button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Ribbon Promo -->
+  <div class="promo-ribbon" id="top">
+    <p>Get 3% Daily Cash back with Apple Card. Or trade in an eligible device for instant credit. <a href="#iphone">Explore offers ›</a></p>
+  </div>
+
+  <!-- HERO: iPhone Pro -->
+  <section class="hero-section" id="iphone">
+    <div class="hero-content reveal">
+      <p class="eyebrow">iPhone 17 Pro</p>
+      <h1 class="hero-title">Titanium. Built for Apple Intelligence.</h1>
+      <p class="hero-subtitle">A19 Pro chip. 48MP Fusion camera system. Aerospace-grade titanium design.</p>
+      <div class="cta-row">
+        <a href="#highlights" class="btn-pill btn-blue">Learn more</a>
+        <button class="btn-pill btn-outline add-bag-btn" data-product="iPhone 17 Pro" data-price="999" type="button">Buy · $999</button>
+      </div>
+    </div>
+
+    <!-- Interactive CSS Device Showcase -->
+    <div class="device-stage reveal">
+      <div class="device-glow" id="deviceGlow"></div>
+      <div class="iphone-frame" id="iphoneFrame" data-finish="desert">
+        <div class="iphone-island">
+          <span class="island-cam"></span>
+        </div>
+        <div class="iphone-screen">
+          <div class="wallpaper-orb orb-1"></div>
+          <div class="wallpaper-orb orb-2"></div>
+          <div class="screen-ui">
+            <span class="screen-time" id="liveClock">9:41</span>
+            <span class="screen-tag" id="finishName">Desert Titanium</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Finish Selector -->
+      <div class="finish-picker" role="radiogroup" aria-label="Select Titanium Finish">
+        <button class="swatch active" data-finish="desert" data-label="Desert Titanium" style="--sw:#c7a688" aria-label="Desert Titanium"></button>
+        <button class="swatch" data-finish="natural" data-label="Natural Titanium" style="--sw:#9b978e" aria-label="Natural Titanium"></button>
+        <button class="swatch" data-finish="white" data-label="White Titanium" style="--sw:#e5e5e7" aria-label="White Titanium"></button>
+        <button class="swatch" data-finish="black" data-label="Black Titanium" style="--sw:#272729" aria-label="Black Titanium"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECONDARY HERO: MacBook Pro -->
+  <section class="mac-section" id="mac">
+    <div class="section-inner reveal">
+      <p class="eyebrow eyebrow-silver">MacBook Pro</p>
+      <h2 class="section-title">Lean. Mean. M4 machine.</h2>
+      <p class="section-subtitle">Up to 24 hours of battery life. Liquid Retina XDR display. Space Black anodized aluminum.</p>
+      <div class="cta-row">
+        <a href="#highlights" class="btn-pill btn-blue">Explore M4 Max</a>
+        <button class="btn-pill btn-outline add-bag-btn" data-product="MacBook Pro 14&quot;" data-price="1599" type="button">Buy · $1,599</button>
+      </div>
+
+      <!-- Interactive Performance Toggle -->
+      <div class="chip-bench">
+        <div class="bench-tabs" role="tablist">
+          <button class="bench-tab active" data-chip="m4max" type="button">M4 Max</button>
+          <button class="bench-tab" data-chip="m4pro" type="button">M4 Pro</button>
+          <button class="bench-tab" data-chip="m4" type="button">M4</button>
+        </div>
+        <div class="bench-metrics" id="benchMetrics">
+          <div class="metric">
+            <span class="metric-val" id="metricCpu">16-core</span>
+            <span class="metric-label">CPU up to 3.4x faster</span>
+          </div>
+          <div class="metric">
+            <span class="metric-val" id="metricGpu">40-core</span>
+            <span class="metric-label">GPU hardware ray tracing</span>
+          </div>
+          <div class="metric">
+            <span class="metric-val" id="metricMem">128GB</span>
+            <span class="metric-label">Unified memory bandwidth</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CSS MacBook Silhouette -->
+      <div class="macbook-art" aria-hidden="true">
+        <div class="mac-lid">
+          <div class="mac-display">
+            <div class="mac-wave"></div>
+            <span class="mac-badge">Pro</span>
+          </div>
+        </div>
+        <div class="mac-base">
+          <div class="mac-notch"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROMO GRID (Bento Tiles) -->
+  <section class="promo-grid" id="ipad">
+    <article class="promo-card card-dark reveal">
+      <div class="card-head">
+        <h3>iPad Pro</h3>
+        <p>Unbelievably thin. Outrageously powerful.</p>
+        <div class="cta-row">
+          <button class="link-cta add-bag-btn" data-product="iPad Pro M4" data-price="999" type="button">Buy · $999 ›</button>
+        </div>
+      </div>
+      <div class="art-ipad" aria-hidden="true">
+        <div class="ipad-edge">
+          <span class="ipad-screen-glow"></span>
+        </div>
+      </div>
+    </article>
+
+    <article class="promo-card card-amber reveal" id="watch">
+      <div class="card-head">
+        <h3>WATCH <span class="ultra-tag">ULTRA 2</span></h3>
+        <p>New satin black finish. Built for the extremes.</p>
+        <div class="cta-row">
+          <button class="link-cta add-bag-btn" data-product="Apple Watch Ultra 2" data-price="799" type="button">Buy · $799 ›</button>
+        </div>
+      </div>
+      <div class="art-watch" aria-hidden="true">
+        <div class="watch-band-top"></div>
+        <div class="watch-case">
+          <div class="watch-dial">
+            <span class="watch-ring"></span>
+            <span class="watch-num">10:09</span>
+          </div>
+        </div>
+        <div class="watch-band-bottom"></div>
+      </div>
+    </article>
+
+    <article class="promo-card card-indigo reveal" id="audio">
+      <div class="card-head">
+        <h3>AirPods Pro</h3>
+        <p>Adaptive Audio. Active Noise Cancellation reimagined.</p>
+        <div class="cta-row">
+          <button class="link-cta add-bag-btn" data-product="AirPods Pro (USB-C)" data-price="249" type="button">Buy · $249 ›</button>
+        </div>
+      </div>
+      <div class="art-airpods" aria-hidden="true">
+        <div class="pod-wave"></div>
+        <div class="pod-pill">USB‑C · Lossless</div>
+      </div>
+    </article>
+
+    <article class="promo-card card-slate reveal">
+      <div class="card-head">
+        <h3>Apple Intelligence</h3>
+        <p>Personal intelligence, private from the ground up.</p>
+        <div class="cta-row">
+          <a href="#highlights" class="link-cta">See how it works ›</a>
+        </div>
+      </div>
+      <div class="art-ai" aria-hidden="true">
+        <div class="ai-ring"></div>
+      </div>
+    </article>
+  </section>
+
+  <!-- HIGHLIGHTS / SPECS STRIP -->
+  <section class="highlights-section" id="highlights">
+    <div class="highlights-inner reveal">
+      <h2>Designed to make a difference.</h2>
+      <div class="spec-cards">
+        <div class="spec-card">
+          <span class="spec-kicker">Silicon</span>
+          <h4>3nm Architecture</h4>
+          <p>Industry-leading performance per watt across iPhone, iPad, and Mac.</p>
+        </div>
+        <div class="spec-card">
+          <span class="spec-kicker">Display</span>
+          <h4>ProMotion 120Hz</h4>
+          <p>Adaptive refresh rates down to 1Hz for ultra-smooth scrolling and always-on clarity.</p>
+        </div>
+        <div class="spec-card">
+          <span class="spec-kicker">Privacy</span>
+          <h4>On-Device First</h4>
+          <p>Sensitive processing happens directly on your hardware with Private Cloud Compute.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BAG DRAWER -->
+  <aside class="bag-drawer" id="bagDrawer" aria-hidden="true">
+    <div class="bag-header">
+      <h3>Bag</h3>
+      <button class="icon-btn" id="closeBagBtn" type="button" aria-label="Close bag">✕</button>
+    </div>
+    <div class="bag-items" id="bagItems"></div>
+    <div class="bag-footer">
+      <div class="bag-total">
+        <span>Total</span>
+        <strong id="bagTotal">$0</strong>
+      </div>
+      <button class="btn-pill btn-blue btn-full" id="checkoutBtn" type="button">Check Out</button>
+    </div>
+  </aside>
+  <div class="bag-backdrop" id="bagBackdrop" hidden></div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-note">
+        1. Trade-in values vary based on condition and model. This is an independent dark-theme Apple-style marketing landing page built with plain HTML, CSS, and vanilla JavaScript for UI practice.
+      </p>
+      <div class="footer-cols">
+        <div>
+          <h4>Shop and Learn</h4>
+          <ul>
+            <li><a href="#mac">Mac</a></li>
+            <li><a href="#ipad">iPad</a></li>
+            <li><a href="#iphone">iPhone</a></li>
+            <li><a href="#watch">Watch</a></li>
+            <li><a href="#audio">AirPods</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Values</h4>
+          <ul>
+            <li><a href="#highlights">Accessibility</a></li>
+            <li><a href="#highlights">Environment</a></li>
+            <li><a href="#highlights">Privacy</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Account</h4>
+          <ul>
+            <li><a href="#top">Manage Apple Account</a></li>
+            <li><a href="#top">Order Status</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>Copyright © 2026 UI Practice Showcase.</span>
+        <span>United States</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script defer src="app.js"></script>
+</body>
+</html>
